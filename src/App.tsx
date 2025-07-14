@@ -121,9 +121,6 @@ const HomePage: React.FC = () => {
               </span>
             </button>
           </div>
-          <p className="text-sm text-gray-600">
-            レースを選択してAI指数計算を開始するか、自分専用のAIロボットを作成しましょう
-          </p>
         </motion.div>
 
         {/* アプリの説明セクション */}
