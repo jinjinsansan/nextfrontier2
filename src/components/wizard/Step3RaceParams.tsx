@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { RaceParam, SubCategory } from '../RobotWizard';
+import { RaceParam } from '../RobotWizard';
 
 interface Step3RaceParamsProps {
   raceParams: RaceParam[];

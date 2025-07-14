@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Toaster, toast } from 'react-hot-toast';
 import { Horse, Race, HorseCategory } from './types';
@@ -10,6 +10,14 @@ import RobotWizard from './components/RobotWizard';
 import RobotList from './components/RobotList';
 import RaceList from './components/RaceList';
 import RacePredict from './components/RacePredict';
+import AdminImport from './components/AdminImport';
+import AdminOdds from './components/AdminOdds';
+import AdminLearningIndex from './components/AdminLearningIndex';
+import AdminDashboard from './components/AdminDashboard';
+import AdminResults from './components/AdminResults';
+import AdminUsers from './components/AdminUsers';
+import AdminAnalysis from './components/AdminAnalysis';
+import AdminSettings from './components/AdminSettings';
 
 // ダミーデータ
 const dummyRaces: Race[] = [
@@ -79,10 +87,8 @@ const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleOddsChange = (horseId: number, odds: number) => {
-    const updatedHorses = horses.map(horse =>
-      horse.id === horseId ? { ...horse, odds } : horse
-    );
     // 実際のアプリでは、horsesのstateを管理する必要があります
+    console.log(`Horse ${horseId} odds changed to ${odds}`);
   };
 
   const handleCategorySelect = (category: HorseCategory) => {
@@ -205,6 +211,60 @@ const HomePage: React.FC = () => {
               <span className="flex items-center justify-center">
                 <span className="mr-2">📋</span>
                 マイロボット一覧
+              </span>
+            </button>
+            <button
+              onClick={() => navigate('/admin/import')}
+              className="btn-secondary text-lg px-8 py-3"
+            >
+              <span className="flex items-center justify-center">
+                <span className="mr-2">⚙️</span>
+                管理者用CSVインポート
+              </span>
+            </button>
+            <button
+              onClick={() => navigate('/admin/odds')}
+              className="btn-secondary text-lg px-8 py-3"
+            >
+              <span className="flex items-center justify-center">
+                <span className="mr-2">💰</span>
+                想定オッズ管理
+              </span>
+            </button>
+            <button
+              onClick={() => navigate('/admin/learning-index')}
+              className="btn-secondary text-lg px-8 py-3"
+            >
+              <span className="flex items-center justify-center">
+                <span className="mr-2">🧠</span>
+                学習的思考指数管理
+              </span>
+            </button>
+            <button
+              onClick={() => navigate('/admin/results')}
+              className="btn-secondary text-lg px-8 py-3"
+            >
+              <span className="flex items-center justify-center">
+                <span className="mr-2">🏆</span>
+                レース結果登録
+              </span>
+            </button>
+            <button
+              onClick={() => navigate('/admin/users')}
+              className="btn-secondary text-lg px-8 py-3"
+            >
+              <span className="flex items-center justify-center">
+                <span className="mr-2">👥</span>
+                ユーザー管理
+              </span>
+            </button>
+            <button
+              onClick={() => navigate('/admin')}
+              className="btn-secondary text-lg px-8 py-3"
+            >
+              <span className="flex items-center justify-center">
+                <span className="mr-2">🏠</span>
+                管理ダッシュボード
               </span>
             </button>
           </div>
@@ -348,6 +408,14 @@ function App() {
         <Route path="/race/:raceId/predict" element={<RacePredict />} />
         <Route path="/create-robot" element={<RobotWizard />} />
         <Route path="/my-robots" element={<RobotList />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/import" element={<AdminImport />} />
+        <Route path="/admin/odds" element={<AdminOdds />} />
+        <Route path="/admin/learning-index" element={<AdminLearningIndex />} />
+        <Route path="/admin/results" element={<AdminResults />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
+        <Route path="/admin/analysis" element={<AdminAnalysis />} />
+        <Route path="/admin/settings" element={<AdminSettings />} />
       </Routes>
     </Router>
   );
