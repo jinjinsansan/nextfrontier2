@@ -6,37 +6,31 @@
 
 @layer base {
   html {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', 'Meiryo', 'Yu Gothic', sans-serif;
   }
-  
   body {
-    background-color: #f9fafb;
-    color: #111827;
+    background-color: #18191c;
+    color: #fff;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+    @apply bg-[#23242a] rounded-xl shadow-lg p-6 border border-[#23242a] text-white;
   }
-  
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+    @apply bg-primary-600 hover:bg-primary-400 text-white font-bold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 shadow-md;
   }
-  
   .btn-secondary {
-    @apply bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+    @apply bg-[#23242a] hover:bg-primary-800 text-primary-200 font-bold py-2 px-4 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 shadow;
   }
-  
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+    @apply w-full px-4 py-3 border border-primary-800 rounded-lg bg-[#18191c] text-white focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200;
   }
-  
   .select-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white;
+    @apply w-full px-4 py-3 border border-primary-800 rounded-lg bg-[#23242a] text-white focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200;
   }
-  
   .file-input {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100;
+    @apply w-full px-4 py-3 border border-primary-800 rounded-lg bg-[#23242a] text-white focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-primary-900 file:text-primary-200 hover:file:bg-primary-800;
   }
 }

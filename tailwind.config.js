@@ -10,23 +10,25 @@ module.exports = {
       },
       colors: {
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          50: '#e3e9f7',
+          100: '#b3c7f3',
+          200: '#7fa3e7',
+          300: '#4d7edc',
+          400: '#2563eb', // UMAIビルダー風ブルー
+          500: '#1e40af',
+          600: '#181e2a',
+          700: '#23242a',
+          800: '#18191c',
+          900: '#101114',
         },
         accent: {
           orange: '#f97316',
           green: '#10b981',
+          blue: '#60a5fa', // 水色
+          cyan: '#38bdf8', // 明るいブルー
         },
-        background: '#f9fafb',
-        text: '#111827',
+        background: '#18191c',
+        text: '#fff',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
